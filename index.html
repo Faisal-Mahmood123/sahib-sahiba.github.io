@@ -1,133 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Note</title>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Jameel+Noori+Nastaleeq:wght@400;700&display=swap">
-    <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="./style.css">
-
+    <title>Login Form</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
-    <div class="container-fluid bg-danger text-white p-5 ">
-        <h1 class="demo">To My Beloved Sahibba ji</h1>
-    </div>
-    <br>
-    <div class="container p-2">
-        <h3 id="greeting">Welcome, My Dearest Sahiba!</h3>
-    </div>
-    <br>
-    <button onclick="showLoveNote()">Click to See Your Surprise</button>
 
-    <div id="loveNote">
-        <div class="scrolling-text">
-            <p>Dear Sahibbaa, I love you more than words can express. I promise to always cherish you.❤️
-                <br>
-                جب تم میرے پاس ہوتی ہو، دنیا کا سب کچھ بھول جاتا ہوں،
-                تمہاری ہر بات، ہر نظر میرے دل کو سکون دیتی ہے،
-                تمہاری محبت میں مجھے ہر لمحہ خوشی ملتی ہے،
-                تمہارے بغیر میری دنیا خالی ہے،
-                محبت کا یہ پیغام تمہارے لیے ہے، میری جان۔
-            </p>
-        </div>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow" style="width: 22rem;">
+        <h3 class="text-center mb-4">Login</h3>
+        <form id="loginForm">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username or Email</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter your username or email" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+            </div>
+            <div id="errorMessage" class="text-danger mb-3 d-none">Invalid username/email or password. Please try again.</div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
     </div>
-    <div class="container mt-3 mb-5" id="mybubbles">
-        <h1 class="text-center color-changing-border text-danger">Sahib / Sahibaa ki Mohabat</h1>
-        <br>
-        <h2 style="font-family: 'Jameel Noori Nastaleeq', serif;">
-            "مجھے تم سے اللہ کے لیے محبت ہے۔"<br><br>
-            سنن ابو داؤد، الادب، باب الرجل، حدیث: 512<br><br>
-            محبت اللہ کی عطا کردہ ایک عظیم نعمت ہے جو دلوں کو جوڑتی اور روحوں کو معطر کرتی ہے۔ جب کسی سے سچی محبت ہوتی
-            ہے تو دل بے چین اور روح بے قرار رہتی ہے۔ اسی محبت کا اظہار کرنے کے لیے چند خوبصورت الفاظ پیش کرتا
-            ہوں:<br><br>
-            محبت ایک ایسا جذبہ ہے جو دل کی گہرائیوں سے نکلتا ہے، اور میں اپنی دل کی گہرائیوں سے تم سے، صاحبہ جی، محبت
-            کرتا ہوں۔ تمہاری محبت نے میری زندگی میں خوشیوں کے رنگ بھر دیے ہیں اور میری دنیا کو روشن کر دیا ہے۔<br><br>
-            صاحبہ جی، تمہاری مسکراہٹ میرے دل کا سکون ہے اور تمہاری موجودگی میری روح کی خوشی ہے۔ جب تم میرے قریب ہوتی ہو،
-            تو مجھے دنیا کی ہر چیز بھول جاتی ہے اور صرف تمہاری محبت کا احساس ہوتا ہے۔<br><br>
-            صاحبہ جی، تمہارے بغیر وقت گزارنا میرے لیے بے حد مشکل ہے۔ ہر لمحہ، ہر پل میں تمہیں اپنے قریب محسوس کرتا ہوں
-            اور تمہاری یادوں میں کھو جاتا ہوں۔ تمہاری محبت میری زندگی کی سب سے قیمتی متاع ہے۔<br><br>
-            میں دعا کرتا ہوں کہ اللہ ہماری محبت کو ہمیشہ قائم و دائم رکھے اور ہمیں اپنی حفاظت میں رکھے۔ صاحبہ جی، میری
-            محبت خالص ہے اور میری نیت پاک ہے۔ میں ہمیشہ تمہارے ساتھ رہنے کا وعدہ کرتا ہوں اور تمہاری خوشیوں کے لیے دعا
-            گو رہتا ہوں۔<br><br>
-            محبت میں خلوص، اعتماد، اور وفا سب سے اہم ہیں اور میں اپنے دل کی گہرائیوں سے وعدہ کرتا ہوں کہ میں ہمیشہ
-            تمہارا، صاحبہ جی، وفادار رہوں گا اور تمہارے لیے قربانیاں دیتا رہوں گا۔<br><br>
-            اللہ ہماری محبت کو اپنی رضا کے مطابق رکھے اور ہمیں نکاح کے بندھن میں باندھ کر ایک پاکیزہ زندگی گزارنے کی
-            توفیق عطا فرمائے۔ صاحبہ جی، میری محبت ہمیشہ تمہارے ساتھ ہے اور تمہاری محبت میرے دل کا سکون ہے۔<br><br>
-            صاحبہ جی، تمہاری محبت کے لیے شکرگزار ہوں اور صبر کے ساتھ تمہارے قریب ہونے کا انتظار کر رہا ہوں۔ اللہ ہماری
-            دعاؤں کو قبول فرمائے اور ہمیں ہمیشہ ساتھ رکھے۔ آمین۔<br><br>
-            تمہارا ہمیشہ کا،<br>
-            فیصل محمود<br><br>
-            یہ الفاظ میری محبت کا اظہار ہیں، اور میری دل کی گہرائیوں سے نکلی ہوئی سچی محبت کا پیغام ہیں۔ صاحبہ جی،
-            تمہاری محبت میرے لیے دنیا کی سب سے بڑی نعمت ہے اور میں ہمیشہ تمہارے ساتھ رہنا چاہتا ہوں ان شاء اللہ۔
-        </h2>
-    </div>
-    <br>
-    <div class="container mb-5">
-        <h1 class="text-danger">Faisal Mahmood</h1>
-    </div>
-    <br>
-    <button id="logoutBtn" class="btn btn-danger">Logout</button>
+</div>
 
-    <audio id="backgroundMusic" src="./image/song.mp3" loop></audio>
+<!-- Bootstrap 5 JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
-    <script>
-document.getElementById('logoutBtn').addEventListener('click', function() {
-        // Remove the login flag from local storage
-        localStorage.removeItem('isLoggedIn');
-        // Redirect the user to the login page
-        window.location.href = 'loginForm.html';
-    });
-
+<!-- JavaScript for Validation and Session Management -->
+<script>
     document.addEventListener('DOMContentLoaded', function() {
-        // If the user is not logged in, redirect to the login page
-        if (localStorage.getItem('isLoggedIn') !== 'true') {
-            window.location.href = 'login.html';
+        // Check if the user is already logged in
+        if (localStorage.getItem('isLoggedIn') === 'true') {
+            window.location.href = 'index.html';
         }
     });
 
-        function showLoveNote() {
-            document.getElementById('loveNote').style.display = 'block';
-            createHearts();
-            createBubbles();
-            const music = document.getElementById('backgroundMusic');
-            music.currentTime = 0; // Reset audio to start
-            music.play(); // Play audio
-        }
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
 
-        function createHearts() {
-            for (let i = 0; i < 20; i++) {
-                let heart = document.createElement('div');
-                heart.className = 'heart';
-                heart.style.left = `${Math.random() * window.innerWidth}px`;
-                heart.style.bottom = '-20px'; /* Start just below the screen */
-                heart.style.animationDelay = `${Math.random() * 2}s`;
-                document.body.appendChild(heart);
-            }
-        }
+        // Predefined correct credentials (for demonstration purposes)
+        const correctUsername = 'sahib@sahiba.com';
+        const correctPassword = 'sahib/sahiba123';
 
-        function createBubbles() {
-            const colors = ['#66ccff', '#ff6666', '#66ff66', '#ffcc66', '#cc66ff'];
-            const numberOfBubbles = 100; // Increase the number if needed
+        // Get input values
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
 
-            for (let i = 0; i < numberOfBubbles; i++) {
-                let bubble = document.createElement('div');
-                bubble.className = 'bubble';
-                bubble.style.left = `${Math.random() * window.innerWidth}px`;
-                bubble.style.top = `${Math.random() * -100}px`; // Start above the viewport
-                bubble.style.animationDelay = `${Math.random() * 5}s`;
-                bubble.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                document.body.appendChild(bubble);
-            }
+        // Validate credentials
+        if (username === correctUsername && password === correctPassword) {
+            // Set a flag in local storage to indicate the user is logged in
+            localStorage.setItem('isLoggedIn', 'true');
+            // Redirect to index.html if credentials are correct
+            window.location.href = 'home.html';
+        } else {
+            // Show error message if credentials are incorrect
+            const errorMessage = document.getElementById('errorMessage');
+            errorMessage.classList.remove('d-none');
         }
-    </script>
+    });
+</script>
+
 </body>
-
 </html>
