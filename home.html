@@ -84,18 +84,22 @@
     <audio id="backgroundMusic" src="./image/song.mp3" loop></audio>
 
     <script>
-        document.getElementById('logoutBtn').addEventListener('click', function () {
-            // Remove the login flag from local storage
-            localStorage.removeItem('isLoggedIn');
-            // Redirect the user to the login page
-            window.location.href = 'index.html';
-        });
-
         document.addEventListener('DOMContentLoaded', function () {
             // If the user is not logged in, redirect to the login page
             if (localStorage.getItem('isLoggedIn') !== 'true') {
                 window.location.href = 'index.html';
             }
+        });
+
+        document.getElementById('logoutBtn').addEventListener('click', function () {
+            // Remove the login flag from local storage
+            localStorage.removeItem('isLoggedIn');
+
+            // Replace the current history entry with the login page
+            history.replaceState(null, null, 'index.html');
+
+            // Redirect the user to the login page
+            window.location.href = 'index.html';
         });
 
         function showLoveNote() {
