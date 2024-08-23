@@ -222,3 +222,14 @@ padding: 10px 20px;
 animation: colorChange 2s infinite;
 /* Adjust duration and timing */
 }
+.password-container {
+    position: relative;
+}
+.password-container {
+    position: relative;
+}
+.password-container input {
+    padding-right: 2.5rem; /* Space for the icon */
+}
+
+
