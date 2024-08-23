@@ -43,16 +43,20 @@
     document.getElementById('loginForm').addEventListener('submit', function(event) {
         event.preventDefault();
 
-        // Predefined correct credentials (for demonstration purposes)
+       
+        // Predefined correct credentials (hashed for demonstration purposes)
         const correctUsername = 'sahib@sahiba.com';
-        const correctPassword = 'sahib/sahiba123';
+        const correctPasswordHash = '4c6794b6a7c7dd2b1ee146e9bb59c4a1f789377708b0291f22e14da31300cfc4'; // SHA-256 hash of 'sahib/sahiba123'
 
         // Get input values
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
+        // Hash the input password
+        const hashedPassword = CryptoJS.SHA256(password).toString();
+
         // Validate credentials
-        if (username === correctUsername && password === correctPassword) {
+        if (username === correctUsername && hashedPassword === correctPasswordHash) {
             // Set a flag in local storage to indicate the user is logged in
             localStorage.setItem('isLoggedIn', 'true');
             // Redirect to index.html if credentials are correct
@@ -64,6 +68,7 @@
         }
     });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 
 </body>
 </html>
