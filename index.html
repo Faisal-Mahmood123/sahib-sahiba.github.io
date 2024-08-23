@@ -66,9 +66,7 @@
 
             // Hash the input password using SHA-256
             const hashedPassword = CryptoJS.SHA256(password).toString();
-            console.log("Hashed Password: ", hashedPassword);
-            console.log("Correct Hash: ", correctPasswordHash);
-
+           
             // Validate credentials
             if (username === correctUsername && hashedPassword === correctPasswordHash) {
                 // Set a flag in local storage to indicate the user is logged in
